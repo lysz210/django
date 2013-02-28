@@ -1,0 +1,3 @@
+Il corso per gli studenti del Serale ITIS C. Zuccante è basato sul libro di Marco Beri Sviluppare applicazioni web con Django.
+Alcuni esempi di programmazione python aiuteranno lo studente a familiarizzare con il linguaggio di programmazione prima di affrontare gli esempi di programmazione delle web application.
+Gli esempi sono sviluppati con la versione 1.4.5 del framework Django (www.djangoproject.com)
