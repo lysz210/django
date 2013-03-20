@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Ricerca Wikipedia{% endblock %}
+{% block content %}
+<h1>Ricerca Wikipedia</h1>
+<form action="." method="POST">
+{% csrf_token %}
+
+<!-- Formati diversi per descrivere il form //-->
+<!-- {{ form.as_p }} //-->
+
+<!--
+<table border="1">
+{{ form.as_table }}
+</table>
+//-->
+<ul>
+{{ form.as_ul }}
+</ul>
+
+<input type="submit" value="Cerca" />
+</form>
+{% if risultati %}
+<h2>{{ risultati|length }} risultati</h2>
+<ul>
+{% for ris in risultati %}
+<li><a target="_blank" href='{{ link }}{{ ris.title }}'>{{ ris.title }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
