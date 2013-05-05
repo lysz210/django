@@ -16,9 +16,10 @@ class Contatto(models.Model):
 	nome = models.CharField(max_length = 100)
 	cognome = models.CharField(max_length = 100)
 	data_nascita = models.DateField(null=True,blank=True)
+	# luogo_nascita 
 	sesso = models.CharField(blank=True,max_length = 100)
 	cf = models.CharField(blank=True,max_length = 16)
-	data_creazione = models.DateField()
+	data_creazione = models.DateField(auto_now_add=True)
 	class Meta:
 		verbose_name_plural = "Contatti"
 	def __unicode__(self):
@@ -61,7 +62,7 @@ class Rubrica(models.Model):
 		return u"%s (%s)" % (self.nome, self.data_creazione)
 
 class Appartenenza(models.Model):
-	data_iscrizione = models.DateField()
+	data_iscrizione = models.DateField(auto_now_add=True)
 	contatto = models.ForeignKey(Contatto)
 	rubrica = models.ForeignKey(Rubrica)
 	

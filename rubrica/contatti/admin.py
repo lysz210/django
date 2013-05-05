@@ -20,8 +20,11 @@ class RecapitiInline(admin.TabularInline):
 
 class IndirizziInline(admin.StackedInline):
     model = Indirizzo
+	
+class AppartenenzaInline(admin.TabularInline):
+    model = Appartenenza
 
-
+# class RubricaOption(admin.ModelAdmin)
 
 class ContattoOption(admin.ModelAdmin):
     
@@ -36,7 +39,7 @@ class ContattoOption(admin.ModelAdmin):
     ordering = ('cognome','nome','data_nascita')
     
     form = ContattoAdminForm
-    inlines = [RecapitiInline,IndirizziInline]
+    inlines = [RecapitiInline,IndirizziInline,AppartenenzaInline]
     fieldsets = (('Cognome e Nome', {
 	'fields': (('cognome','nome'),),
         }),('Dati amministrativi',{
