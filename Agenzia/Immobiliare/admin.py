@@ -25,4 +25,4 @@ class ImmobileOption(admin.ModelAdmin):
 admin.site.register(Immobile,ImmobileOption)
 admin.site.register(TipoContratto)
 admin.site.register(Zona)
-admin.site.register(Annuncio)
+# admin.site.register(Annuncio)

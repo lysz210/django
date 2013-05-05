@@ -19,7 +19,7 @@ class Zona (models.Model):
 class TipoContratto (models.Model):
 	descrizione = models.CharField(max_length=50)
 	class Meta:
-		verbose_name_plural = "Tipo del contrallo"
+		verbose_name_plural = "Tipo del contratto"
 	def __unicode__(self):
 		return u"%s" % (self.descrizione)
 
