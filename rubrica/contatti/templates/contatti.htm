@@ -1,0 +1,22 @@
+{% extends "base.htm" %}
+{% block title %}I miei contatti{% endblock%}
+{% block content %}
+<img src="/static/images/contacts.png" alt="Contatti" id="contacts" />
+<h1>I miei Contatti</h1>
+
+<table>
+    <caption>elenco completo</caption>
+    <tr>
+        <th>Cognome Nome</th>
+        <th>&nbsp;</th>
+
+    </tr>
+    {% for contatto in contatti %}
+    <tr>
+        <td>{{contatto.cognome}} {{contatto.nome}}</td>
+        <td><a href="/contatto/{{contatto.pk}}">vedi</a></td>
+
+    </tr>
+    {% endfor%}
+</table>
+{% endblock%}
