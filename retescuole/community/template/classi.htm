@@ -1,0 +1,23 @@
+{% extends "base.htm" %}
+{% block title %}Le mie classi{% endblock%}
+{% block content %}
+
+<h1>Le classi</h1>
+
+<table>
+    <caption>elenco completo</caption>
+    <tr>
+        <th>Classe</th>
+        <th>Anno attivazione</th>
+        <th> - </th>
+    </tr>
+    {% for o_classe in k_classi %}
+    <tr>
+        <td>{{o_classe}} </td>
+        <td>{{o_classe.AS}}</td>
+        <td><a href="{{ o_classe.get_absolute_url }}">vedi</a></td>
+
+    </tr>
+    {% endfor%}
+</table>
+{% endblock%}

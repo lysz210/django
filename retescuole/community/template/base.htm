@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <title>{% block title %}{% endblock%}</title>
+    <link href="/static/css/Stili.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div id="logo" class="header">
+		<img src="/static/images/contacts.png"  />
+	</div>
+	<!-- Insert your content here -->
+    <div id="content" class="main_div">
+    {% block content %}{% endblock%}
+    </div>
+</body>
+</html>
+

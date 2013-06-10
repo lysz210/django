@@ -1,0 +1,47 @@
+{% extends "base.htm" %}
+{% block title %}{{k_classe.AS}} {{k_classe.corso}}{% endblock%}
+{% block content %}
+<h1>{{k_classe.corso}} {{k_classe.AS}}</h1>
+
+<table>
+    <caption>Elenco studenti</caption>
+     <thead>
+        <tr>
+            <td colspan="3">
+             Anno scolastico:   {{k_classe.AS}}
+                
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+             creata il:   {{k_classe.data_creazione|date:"j F \d\e\l Y"}}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+             specializzazione:   {{k_classe.specializzazione}}
+            </td>
+        </tr>
+     </thead>
+    <tfoot>
+        <tr>
+            <td colspan="3">
+             <small>data inserimento:   {{k_classe.data_creazione|date:"j F \d\e\l Y"}}</small>
+            </td>
+        </tr>
+    </tfoot>
+    {% for iscritti in k_iscritti %}
+    <tbody>
+    <tr>
+        <td>{{iscritti.studente.matricola}}</td>
+        <td>{{iscritti.studente.cognome}}</td>
+        <td>{{iscritti.studente.nome}}</td>
+    </tr>
+    </tbody>
+{% endfor%}
+    
+</table>
+<p>
+    <a href="/classi/" >indietro</a>
+</p>
+{% endblock%}
